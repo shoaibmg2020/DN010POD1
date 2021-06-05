@@ -1,0 +1,12 @@
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\DAL\bin\Debug\DAL.dll.config
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\DAL\bin\Debug\DAL.dll
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\DAL\bin\Debug\DAL.pdb
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\DAL\bin\Debug\EntityFramework.dll
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\DAL\bin\Debug\EntityFramework.xml
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\DAL\obj\Debug\DAL.dll
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\DAL\obj\Debug\DAL.pdb

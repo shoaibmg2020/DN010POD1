@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CTSEMPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="DepartmentMaster">
+    <Key>
+      <PropertyRef Name="EmpDepartment" />
+      <PropertyRef Name="EmpDesignation" />
+    </Key>
+    <Property Name="EmpDepartment" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmpDesignation" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmpMaster">
+    <Key>
+      <PropertyRef Name="EmpCode" />
+    </Key>
+    <Property Name="EmpCode" Type="int" Nullable="false" />
+    <Property Name="EmpName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmpDob" Type="datetime" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmpDepartment" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EmpDesignation" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SalaryInfo">
+    <Key>
+      <PropertyRef Name="SalarySheetNo" />
+    </Key>
+    <Property Name="SalarySheetNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmpCode" Type="int" Nullable="false" />
+    <Property Name="DateOfSalary" Type="datetime" Nullable="false" />
+    <Property Name="Basic" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="HRA" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="DA" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="NetSalary" Type="numeric" Precision="20" Scale="0" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'CTSEMP.dbo.UserInfo' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UserInfo">
+    <Key>
+      <PropertyRef Name="Email" />
+      <PropertyRef Name="Password" />
+    </Key>
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_EmpMaster_DepartmentMaster">
+    <End Role="DepartmentMaster" Type="Self.DepartmentMaster" Multiplicity="1" />
+    <End Role="EmpMaster" Type="Self.EmpMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DepartmentMaster">
+        <PropertyRef Name="EmpDepartment" />
+        <PropertyRef Name="EmpDesignation" />
+      </Principal>
+      <Dependent Role="EmpMaster">
+        <PropertyRef Name="EmpDepartment" />
+        <PropertyRef Name="EmpDesignation" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SalaryInfo_EmpMaster1">
+    <End Role="EmpMaster" Type="Self.EmpMaster" Multiplicity="1" />
+    <End Role="SalaryInfo" Type="Self.SalaryInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EmpMaster">
+        <PropertyRef Name="EmpCode" />
+      </Principal>
+      <Dependent Role="SalaryInfo">
+        <PropertyRef Name="EmpCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="DeleteEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmpCode" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SaveDepartment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmpDepartment" Type="nvarchar" Mode="In" />
+    <Parameter Name="EmpDesignation" Type="nvarchar" Mode="In" />
+    <Parameter Name="Count" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="SaveEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmpCode" Type="int" Mode="In" />
+    <Parameter Name="EmpName" Type="nvarchar" Mode="In" />
+    <Parameter Name="EmpDob" Type="datetime" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="EmpDepartment" Type="nvarchar" Mode="In" />
+    <Parameter Name="EmpDesignation" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Select_Emp_By_Name" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmpName" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="CTSEMPModelStoreContainer">
+    <EntitySet Name="DepartmentMaster" EntityType="Self.DepartmentMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmpMaster" EntityType="Self.EmpMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SalaryInfo" EntityType="Self.SalaryInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserInfo" EntityType="Self.UserInfo" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [UserInfo].[Email] AS [Email], 
+    [UserInfo].[Password] AS [Password]
+    FROM [dbo].[UserInfo] AS [UserInfo]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_EmpMaster_DepartmentMaster" Association="Self.FK_EmpMaster_DepartmentMaster">
+      <End Role="DepartmentMaster" EntitySet="DepartmentMaster" />
+      <End Role="EmpMaster" EntitySet="EmpMaster" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SalaryInfo_EmpMaster1" Association="Self.FK_SalaryInfo_EmpMaster1">
+      <End Role="EmpMaster" EntitySet="EmpMaster" />
+      <End Role="SalaryInfo" EntitySet="SalaryInfo" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

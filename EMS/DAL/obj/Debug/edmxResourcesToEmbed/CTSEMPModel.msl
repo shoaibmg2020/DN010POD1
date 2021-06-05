@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CTSEMPModelStoreContainer" CdmEntityContainer="CTSEMPEntities">
+    <EntitySetMapping Name="DepartmentMasters">
+      <EntityTypeMapping TypeName="CTSEMPModel.DepartmentMaster">
+        <MappingFragment StoreEntitySet="DepartmentMaster">
+          <ScalarProperty Name="EmpDepartment" ColumnName="EmpDepartment" />
+          <ScalarProperty Name="EmpDesignation" ColumnName="EmpDesignation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmpMasters">
+      <EntityTypeMapping TypeName="CTSEMPModel.EmpMaster">
+        <MappingFragment StoreEntitySet="EmpMaster">
+          <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="EmpDob" ColumnName="EmpDob" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmpDepartment" ColumnName="EmpDepartment" />
+          <ScalarProperty Name="EmpDesignation" ColumnName="EmpDesignation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalaryInfoes">
+      <EntityTypeMapping TypeName="CTSEMPModel.SalaryInfo">
+        <MappingFragment StoreEntitySet="SalaryInfo">
+          <ScalarProperty Name="SalarySheetNo" ColumnName="SalarySheetNo" />
+          <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
+          <ScalarProperty Name="DateOfSalary" ColumnName="DateOfSalary" />
+          <ScalarProperty Name="Basic" ColumnName="Basic" />
+          <ScalarProperty Name="HRA" ColumnName="HRA" />
+          <ScalarProperty Name="DA" ColumnName="DA" />
+          <ScalarProperty Name="NetSalary" ColumnName="NetSalary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserInfoes">
+      <EntityTypeMapping TypeName="CTSEMPModel.UserInfo">
+        <MappingFragment StoreEntitySet="UserInfo">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="DeleteEmployee" FunctionName="CTSEMPModel.Store.DeleteEmployee" />
+    <FunctionImportMapping FunctionImportName="SaveDepartment" FunctionName="CTSEMPModel.Store.SaveDepartment" />
+    <FunctionImportMapping FunctionImportName="SaveEmployee" FunctionName="CTSEMPModel.Store.SaveEmployee" />
+    <FunctionImportMapping FunctionImportName="Select_Emp_By_Name" FunctionName="CTSEMPModel.Store.Select_Emp_By_Name">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="CTSEMPModel.Select_Emp_By_Name_Result">
+          <ScalarProperty Name="EmpCode" ColumnName="EmpCode" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="EmpDob" ColumnName="EmpDob" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="EmpDepartment" ColumnName="EmpDepartment" />
+          <ScalarProperty Name="EmpDesignation" ColumnName="EmpDesignation" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

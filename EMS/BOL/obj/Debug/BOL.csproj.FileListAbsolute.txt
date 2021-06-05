@@ -1,0 +1,12 @@
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\BOL\bin\Debug\BOL.dll
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\BOL\bin\Debug\BOL.pdb
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\BOL\bin\Debug\DAL.dll
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\BOL\bin\Debug\EntityFramework.dll
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\BOL\bin\Debug\DAL.pdb
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\BOL\bin\Debug\DAL.dll.config
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\BOL\bin\Debug\EntityFramework.xml
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\BOL\obj\Debug\BOL.csprojAssemblyReference.cache
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\BOL\obj\Debug\BOL.csproj.CoreCompileInputs.cache
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\BOL\obj\Debug\BOL.csproj.CopyComplete
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\BOL\obj\Debug\BOL.dll
+D:\SHOAIB\Corporate\Alchemy\CTS\2021\INTADM21DN010\MFPE\EMS\BOL\obj\Debug\BOL.pdb
